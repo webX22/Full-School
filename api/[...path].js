@@ -15,7 +15,7 @@ export default async function (req, res) {
       const [u] = await q("SELECT * FROM users WHERE email=lower($1)", [B.email || ""]);
       if (!u || !(await verify(B.password || "", u.password_hash))) return send({ error: "Invalid email or password" }, 401);
       const token = await sign({ id: u.id, role: u.role });
-      res.cookie("sms", token, { httpOnly: true, path: "/", maxAge: 6048e5 });
+      res.cookie("sms", token, { httpOnly: true, path: "/", maxAge: 604800 });
       await q("INSERT INTO audit_logs(user_id,action) VALUES($1,'Logged in')", [u.id]);
       return send({ token });
     }
