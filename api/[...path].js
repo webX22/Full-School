@@ -20,7 +20,9 @@ export default async function (req, res) {
       return send({ token });
     }
     if (a === "logout") { res.cookie("sms", "", { path: "/", maxAge: 0 }); return send({ ok: 1 }); }
-    const tok = await check((req.headers.authorization || "").replace(/^Bearer /, "") || req.cookies?.sms);
+    const hd = k => { const f = Object.keys(req.headers).find(h => h.toLowerCase() === k); return f ? String(req.headers[f]) : ""; };
+    const ck = req.cookies?.sms || (hd("cookie").match(/(?:^|;\s*)sms=([^;]+)/) || [])[1];
+    const tok = await check(hd("authorization").replace(/^Bearer /i, "") || ck);
     const U = tok && (await q("SELECT id,name,email,role,profile_pic,(SELECT department FROM staff WHERE user_id=users.id) dept FROM users WHERE id=$1", [tok.id]))[0];
     if (!U) return send({ error: "Not authenticated" }, 401);
     const is = (...r) => r.includes(U.role);
