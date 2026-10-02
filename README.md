@@ -13,6 +13,7 @@
 <br/><br/>
 
 <a href="#-live-demo"><b>Live Demo</b></a> •
+<a href="#-screenshots"><b>Screenshots</b></a> •
 <a href="#-features"><b>Features</b></a> •
 <a href="#-tech-stack"><b>Tech Stack</b></a> •
 <a href="#-api-reference"><b>API</b></a> •
@@ -63,6 +64,42 @@ Four distinct roles — **Headmaster**, **Teacher**, **Student**, and **Staff** 
 | 🛡️ Security | `security@school.test` |
 
 </div>
+
+<br/>
+
+## 📸 Screenshots
+
+> ⚠️ **These are illustrative mockups, not live screenshots.** I don't have a browser tool to capture the deployed app, so these are hand-built SVGs styled to match the real UI (same layout, sidebar, cards and colors). Swap them for real screenshots whenever you get a chance — see the note at the end of this section.
+
+<div align="center">
+
+<table>
+<tr>
+<td align="center" width="50%"><b>Login</b><br/><img src="screenshots/login.svg" width="100%"/></td>
+<td align="center" width="50%"><b>Headmaster Dashboard</b><br/><img src="screenshots/headmaster-dashboard.svg" width="100%"/></td>
+</tr>
+<tr>
+<td align="center" width="50%"><b>Teacher Dashboard</b><br/><img src="screenshots/teacher-dashboard.svg" width="100%"/></td>
+<td align="center" width="50%"><b>Student Dashboard</b><br/><img src="screenshots/student-dashboard.svg" width="100%"/></td>
+</tr>
+<tr>
+<td align="center" colspan="2"><b>Cafeteria Module</b><br/><img src="screenshots/cafeteria-module.svg" width="70%"/></td>
+</tr>
+</table>
+
+</div>
+
+<details>
+<summary><b>🔁 Replacing these with real screenshots</b></summary>
+
+<br/>
+
+1. Open the [live demo](#-live-demo) and sign in with a demo account.
+2. Capture each screen (browser devtools → full-page screenshot, or any screenshot tool).
+3. Save them into a `screenshots/` folder at the repo root, e.g. `screenshots/headmaster-dashboard.png`.
+4. Update the `<img src="...">` paths above to point at your `.png` files instead of the `.svg` mockups.
+
+</details>
 
 <br/>
 
